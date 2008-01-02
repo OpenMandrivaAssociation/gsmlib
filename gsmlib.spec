@@ -14,6 +14,7 @@ Patch:		gsmlib-1.11-gcc4.patch
 URL:		http://www.pxh.de/fs/gsmlib/index.html
 License:	GPL
 Group:		Communications
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	gettext bison
 
 %description
