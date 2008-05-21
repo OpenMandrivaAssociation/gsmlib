@@ -1,21 +1,19 @@
-%define name	gsmlib
-%define version	1.11
-%define release %mkrel 0.3
-%define major	1
+%define major 1
 %define libname %mklibname %name %major
 
-Name: 	 	%{name}
 Summary: 	Library and utilities to access GSM mobile phones
-Version: 	%{version}
-Release: 	%{release}
-
-Source:		%{name}-pre1.11-041028.tar.bz2
-Patch:		gsmlib-1.11-gcc4.patch
-URL:		http://www.pxh.de/fs/gsmlib/index.html
+Name: 	 	gsmlib
+Version: 	1.11
+Release: 	%mkrel 0.4
 License:	GPL
 Group:		Communications
-BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	gettext bison
+URL:		http://www.pxh.de/fs/gsmlib/index.html
+Source0:	%{name}-pre1.11-041028.tar.bz2
+Patch0:		gsmlib-1.11-gcc4.patch
+Patch1:		gsmlib-1.11-gcc43.patch
+BuildRequires:	gettext
+BuildRequires:	bison
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This distribution contains a library to access GSM mobile phones through GSM
@@ -46,24 +44,28 @@ Obsoletes: 	%name-devel
 Libraries and includes files for developing programs based on %name.
 
 %prep
+
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 %configure2_5x
 %make
 										
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
+
 %makeinstall
 
 %find_lang %name
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %post -n %{libname} -p /sbin/ldconfig
+
 %postun -n %{libname} -p /sbin/ldconfig
+
+%clean
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
@@ -83,5 +85,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.so
 %{_libdir}/*.a
 %{_libdir}/*.la
-
-
