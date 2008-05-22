@@ -9,8 +9,10 @@ License:	GPL
 Group:		Communications
 URL:		http://www.pxh.de/fs/gsmlib/index.html
 Source0:	%{name}-pre1.11-041028.tar.bz2
-Patch0:		gsmlib-1.11-gcc4.patch
+Patch0:		gsmlib-1.11-gcc41.patch
 Patch1:		gsmlib-1.11-gcc43.patch
+Patch2:		gsmlib-1.11-include-gcc34-fix.patch
+Patch3:		gsmlib-1.11-linkfix.diff
 BuildRequires:	gettext
 BuildRequires:	bison
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -48,9 +50,14 @@ Libraries and includes files for developing programs based on %name.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
+export LIBS="-lstdc++"
+
 %configure2_5x
+
 %make
 										
 %install
