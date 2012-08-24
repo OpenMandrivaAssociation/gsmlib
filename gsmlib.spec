@@ -61,22 +61,9 @@ export LIBS="-lstdc++"
 %make
 										
 %install
-rm -rf %{buildroot}
-
 %makeinstall
 
 %find_lang %name
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
@@ -95,4 +82,3 @@ rm -rf %{buildroot}
 %{_includedir}/%name/*.h
 %{_libdir}/*.so
 %{_libdir}/*.a
-%{_libdir}/*.la
