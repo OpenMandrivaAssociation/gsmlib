@@ -82,3 +82,62 @@ export LIBS="-lstdc++"
 %{_includedir}/%name/*.h
 %{_libdir}/*.so
 %{_libdir}/*.a
+
+
+%changelog
+* Tue May 03 2011 Oden Eriksson <oeriksson@mandriva.com> 1.11-5.9mdv2011.0
++ Revision: 664930
+- mass rebuild
+
+* Thu Dec 02 2010 Oden Eriksson <oeriksson@mandriva.com> 1.11-5.8mdv2011.0
++ Revision: 605503
+- rebuild
+
+* Mon Mar 15 2010 Oden Eriksson <oeriksson@mandriva.com> 1.11-5.7mdv2010.1
++ Revision: 520116
+- rebuilt for 2010.1
+
+* Wed Sep 02 2009 Christophe Fergeau <cfergeau@mandriva.com> 1.11-5.6mdv2010.0
++ Revision: 425047
+- rebuild
+
+* Sun Dec 21 2008 Oden Eriksson <oeriksson@mandriva.com> 1.11-5.5mdv2009.1
++ Revision: 316957
+- rebuild
+
+* Wed Aug 06 2008 Thierry Vignaud <tv@mandriva.org> 1.11-5.4mdv2009.0
++ Revision: 264618
+- rebuild early 2009.0 package (before pixel changes)
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Thu May 22 2008 Oden Eriksson <oeriksson@mandriva.com> 1.11-0.4mdv2009.0
++ Revision: 210050
+- fix build
+- added one gcc43 patch by gentoo
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 1.11-0.3mdv2008.1
++ Revision: 140742
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Thu Feb 01 2007 Laurent Montel <lmontel@mandriva.com> 1.11-0.3mdv2007.0
++ Revision: 115862
+- Rebuild
+- Import gsmlib
+
+* Tue Jun 13 2006 Helio Castro <helio@mandriva.com> 1.11-0.2mdk
+- Fixed headers ( gcc4 patch )
+
+* Tue Aug 30 2005 Austin Acton <austin@mandriva.org> 1.11-0.1mdk
+- go to pre1.11-041028
+- tweak the patch for gcc 4
+
+* Wed Jun 09 2004 Austin Acton <austin@mandrake.org> 1.10-2mdk
+- configure 2.5
+- patch for new gcc (Christiaan Welvaart)
+
