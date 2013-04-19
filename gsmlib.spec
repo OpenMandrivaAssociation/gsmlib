@@ -55,7 +55,10 @@ Libraries and includes files for developing programs based on %name.
 
 %build
 export LIBS="-lstdc++"
-
+# FIXME: gold linker dies with internal error in convert_types, at ../../gold/gold.h:192 on i586
+%ifarch %{ix86}
+export CC="%{__cc} -fuse-ld=bfd"
+%endif
 %configure2_5x
 
 %make
