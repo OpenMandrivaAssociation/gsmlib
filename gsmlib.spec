@@ -6,7 +6,7 @@
 Summary: 	Library and utilities to access GSM mobile phones
 Name: 	 	gsmlib
 Version: 	1.11
-Release: 	7
+Release: 	8
 License:	GPLv2
 Group:		Communications
 Url:		http://www.pxh.de/fs/gsmlib/index.html
