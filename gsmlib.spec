@@ -3,6 +3,9 @@
 %define	libgsmext	%mklibname gsmext %{major}
 %define devname 	%mklibname %{name} -d
 
+%define _disable_lto 1
+%define _disable_rebuild_configure 1
+
 Summary: 	Library and utilities to access GSM mobile phones
 Name: 	 	gsmlib
 Version: 	1.11
