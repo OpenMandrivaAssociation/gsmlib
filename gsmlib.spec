@@ -12,7 +12,7 @@ Version: 	1.11
 Release: 	16
 License:	GPLv2
 Group:		Communications
-Url:		http://www.pxh.de/fs/gsmlib/index.html
+Url:		https://www.pxh.de/fs/gsmlib/index.html
 Source0:	%{name}-pre1.11-041028.tar.bz2
 Patch0:		gsmlib-1.11-gcc41.patch
 Patch1:		gsmlib-1.11-gcc43.patch
